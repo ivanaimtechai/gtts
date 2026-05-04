@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #0F2A47;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .container-x {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold px-5 py-3 transition-colors;
+  }
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-navy hover:bg-brand-navy2 text-white font-semibold px-5 py-3 transition-colors;
+  }
+  .btn-outline-navy {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold px-5 py-3 transition-colors;
+  }
+  .btn-white {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-white text-brand-navy font-semibold px-5 py-3 hover:bg-brand-softblue transition-colors;
+  }
+  .h-section {
+    @apply text-2xl sm:text-3xl font-bold text-brand-navy text-center;
+  }
+  .h-section-underline {
+    @apply mx-auto mt-3 mb-8 h-[3px] w-12 bg-brand-blue rounded-full;
+  }
+  .card {
+    @apply bg-white border border-brand-line rounded-xl p-5 shadow-card;
+  }
+}
