@@ -21,18 +21,18 @@ export default function CTABand({
   if (variant === 'split') {
     return (
       <section className="text-white relative overflow-hidden" style={{ backgroundColor: '#133D60' }}>
-        <DotsBg />
         <div className="container-x py-10 md:py-14 grid md:grid-cols-[auto,1fr,auto] gap-6 items-center relative z-10">
           <ShieldBadge />
           <div className="md:pl-2">
             <h3 className="text-xl md:text-2xl font-bold">{title}</h3>
             {subtitle && <p className="text-white/80 text-sm md:text-base mt-1">{subtitle}</p>}
           </div>
-          <div className="md:justify-self-end">
+          <div className="md:justify-self-end relative">
             <Btn>
               {buttonIcon}
               {buttonLabel}
             </Btn>
+            <CurvedArrowBack />
           </div>
         </div>
       </section>
@@ -105,23 +105,51 @@ function DotsBg() {
           ))
         )}
       </svg>
-      <svg className="absolute right-10 bottom-6 hidden md:block" width="160" height="40" viewBox="0 0 160 40" aria-hidden="true">
-        <path d="M5 30 Q 50 -5, 100 20 T 155 18" stroke="white" strokeWidth="1.5" strokeDasharray="3 4" fill="none" opacity="0.6" />
-        <polygon points="150,14 158,18 150,22" fill="white" opacity="0.6" />
-      </svg>
     </>
   )
 }
 
 function ShieldBadge() {
   return (
-    <div className="h-20 w-20 md:h-24 md:w-24 rounded-full bg-white/10 flex items-center justify-center ring-1 ring-white/30">
+    <div className="h-20 w-20 md:h-24 md:w-24 rounded-full bg-white/10 flex items-center justify-center ring-1 ring-white/20">
       <div className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-white/15 flex items-center justify-center">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="0" aria-hidden="true">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <polyline points="9 12 11 14 15 10" />
+          <polyline points="9 12 11 14 15 10" stroke="#004985" strokeWidth="2.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     </div>
+  )
+}
+
+function CurvedArrowBack() {
+  return (
+    <svg
+      className="absolute -right-20 -top-2 hidden md:block pointer-events-none"
+      width="120"
+      height="50"
+      viewBox="0 0 120 50"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M 110 4 C 95 8, 70 12, 30 32"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeDasharray="3 4"
+        strokeLinecap="round"
+        opacity="0.75"
+        fill="none"
+      />
+      <path
+        d="M 36 26 L 28 32 L 36 38"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.75"
+        fill="none"
+      />
+    </svg>
   )
 }
