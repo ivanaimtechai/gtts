@@ -16,8 +16,8 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-brand-line sticky top-0 z-40">
-      <div className="container-x flex items-center justify-between h-[72px]">
-        <Logo />
+      <div className="container-x flex items-center justify-between h-[104px]">
+        <Logo height={84} />
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-7">

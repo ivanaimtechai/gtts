@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
  * - Falls back to an inline-SVG approximation if the image fails to load,
  *   so the site never renders without a logo.
  */
-export default function Logo({ className = '', height = 44 }) {
+export default function Logo({ className = '', height = 72 }) {
   const [imgFailed, setImgFailed] = useState(false)
 
   return (
