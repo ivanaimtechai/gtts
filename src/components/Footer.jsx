@@ -20,12 +20,12 @@ const legal = [
 ]
 
 const socials = [
-  { label: 'Tiktok', icon: TiktokIcon },
-  { label: 'Instagram', icon: InstagramIcon },
-  { label: 'X', icon: XIcon },
-  { label: 'YouTube', icon: YouTubeIcon },
-  { label: 'Facebook', icon: FacebookIcon },
-  { label: 'LinkedIn', icon: LinkedInIcon },
+  { label: 'Tiktok', icon: TiktokIcon, bg: '#000000' },
+  { label: 'Instagram', icon: InstagramIcon, bg: 'linear-gradient(45deg,#F58529,#DD2A7B,#8134AF)' },
+  { label: 'X', icon: XIcon, bg: '#000000' },
+  { label: 'YouTube', icon: YouTubeIcon, bg: '#FF0000' },
+  { label: 'Facebook', icon: FacebookIcon, bg: '#1877F2' },
+  { label: 'LinkedIn', icon: LinkedInIcon, bg: '#0A66C2' },
 ]
 
 export default function Footer() {
@@ -87,8 +87,16 @@ export default function Footer() {
                 const Icon = s.icon
                 return (
                   <li key={s.label}>
-                    <a href="#" className="inline-flex items-center gap-2 hover:text-brand-blue text-brand-navy/80">
-                      <Icon className="h-4 w-4" />
+                    <a
+                      href="#"
+                      className="inline-flex items-center gap-2 hover:text-brand-blue text-brand-navy/80"
+                    >
+                      <span
+                        className="inline-flex h-5 w-5 items-center justify-center rounded-[5px] text-white shrink-0"
+                        style={{ background: s.bg }}
+                      >
+                        <Icon className="h-3 w-3" />
+                      </span>
                       {s.label}
                     </a>
                   </li>
@@ -102,7 +110,7 @@ export default function Footer() {
       <div className="bg-black text-white">
         <div className="container-x py-4 text-xs text-center text-white/85">
           © 2026 gototrafficschool.com Powered by{' '}
-          <span className="font-semibold">Cyberactive</span>. All rights reserved.
+          <a href="#" className="underline underline-offset-2 hover:text-white">Cyberactive</a>. All rights reserved.
         </div>
       </div>
     </>

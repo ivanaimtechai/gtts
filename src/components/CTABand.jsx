@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Users } from 'lucide-react'
 
 /**
  * Reusable dark blue CTA band (matches "Start Your Traffic School Today" / "You can start your course anytime").
@@ -47,7 +48,7 @@ export default function CTABand({
 
   return (
     <section className="bg-brand-navy text-white relative overflow-hidden">
-      <DotsBg />
+      <WaveLines />
       <div className="container-x py-12 md:py-16 text-center relative z-10">
         <h3 className="text-2xl md:text-3xl font-bold">{title}</h3>
         {subtitle && <p className="text-white/85 mt-3 max-w-2xl mx-auto">{subtitle}</p>}
@@ -58,15 +59,40 @@ export default function CTABand({
           </Btn>
         </div>
         {trustNote && (
-          <p className="mt-6 text-sm text-white/80 inline-flex items-center gap-2 justify-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
+          <p className="mt-6 text-sm font-semibold text-white inline-flex items-center gap-2 justify-center">
+            <Users className="h-4 w-4" />
             {trustNote}
           </p>
         )}
       </div>
     </section>
+  )
+}
+
+function WaveLines() {
+  // Flowing parallel curve lines decoration on the left side of the band
+  return (
+    <svg
+      className="absolute left-0 top-0 h-full w-[280px] md:w-[340px] opacity-50 pointer-events-none"
+      viewBox="0 0 340 220"
+      fill="none"
+      preserveAspectRatio="xMinYMid slice"
+      aria-hidden="true"
+    >
+      {[...Array(9)].map((_, i) => {
+        const offset = i * 8
+        return (
+          <path
+            key={i}
+            d={`M -20 ${30 + offset} C 60 ${10 + offset}, 140 ${110 + offset}, 240 ${50 + offset} S 360 ${110 + offset}, 420 ${70 + offset}`}
+            stroke="#7FB3DC"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity={0.55 - i * 0.03}
+          />
+        )
+      })}
+    </svg>
   )
 }
 
