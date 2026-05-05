@@ -164,7 +164,7 @@ export default function About() {
                 { t: 'No Timer or waiting periods', d: 'We never force time restrictions or unnecessary delays.' },
                 { t: 'True Self-Paced Learning', d: "You're in control — complete the course on your schedule." },
                 { t: 'Same-Day Certificate Processing', d: 'Fast, reliable processing in many states.' },
-                { t: 'Real Human Support', d: 'Talk to a real person when you need help.' },
+                { t: 'Real Human Support', d: 'Talk to real person when you need help.' },
                 { t: 'Lowest Price Guarantee', d: 'If you find a comparable course for less, we will beat it.' },
               ].map((row) => (
                 <li key={row.t} className="flex gap-3">
@@ -198,14 +198,14 @@ export default function About() {
       {/* WHAT MAKES US DIFFERENT */}
       <section className="pb-16">
         <div className="container-x">
-          <h2 className="h-section">What Makes Us Different</h2>
+          <h2 className="h-section">What Makes Us different</h2>
           <span className="h-section-underline block" />
           <div className="grid grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto divide-y md:divide-y-0 md:divide-x divide-brand-line">
             {[
               {
                 icon: ShieldStarIcon,
                 body: (
-                  <>We've been in this space longer than most — and it shows.</>
+                  <>We've been in this space longer than most- and it shows.</>
                 ),
               },
               {

@@ -6,7 +6,7 @@ export default {
       colors: {
         // Brand palette pulled from the source design
         brand: {
-          navy: '#0F2A47',      // dark blue used in header bands & buttons
+          navy: '#004985',      // dark blue used in header bands & buttons
           navy2: '#143861',
           blue: '#1E5A91',      // mid blue for headings / link accents
           accent: '#2E78B0',    // icon / pill accent

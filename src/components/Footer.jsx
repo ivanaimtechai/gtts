@@ -31,7 +31,7 @@ const socials = [
 export default function Footer() {
   return (
     <>
-      <footer className="bg-brand-softblue text-brand-navy">
+      <footer className="text-brand-navy" style={{ backgroundColor: '#79AFC866' }}>
         <div className="container-x py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Logo />
@@ -87,14 +87,8 @@ export default function Footer() {
                 const Icon = s.icon
                 return (
                   <li key={s.label}>
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 hover:text-brand-blue text-brand-navy/80"
-                    >
-                      <span
-                        className="inline-flex h-5 w-5 items-center justify-center rounded-[5px] text-white shrink-0"
-                        style={{ background: s.bg }}
-                      >
+                    <a href="#" className="inline-flex items-center gap-2 hover:text-brand-blue text-brand-navy/80">
+                      <span className="inline-flex h-5 w-5 items-center justify-center rounded-[5px] text-white shrink-0" style={{ background: s.bg }}>
                         <Icon className="h-3 w-3" />
                       </span>
                       {s.label}
@@ -117,7 +111,6 @@ export default function Footer() {
   )
 }
 
-/* simple monochrome social glyphs */
 function TiktokIcon(p) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...p}>

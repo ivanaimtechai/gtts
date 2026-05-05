@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Users } from 'lucide-react'
 
-/**
- * Reusable dark blue CTA band (matches "Start Your Traffic School Today" / "You can start your course anytime").
- * Variants:
- *  - default: title + subtitle + primary orange button
- *  - center : centered title + sub + button
- *  - split  : icon shield on left, title + sub centered, button on right (Contact / FAQ pages)
- */
 export default function CTABand({
   variant = 'center',
   title,
@@ -27,7 +20,7 @@ export default function CTABand({
 
   if (variant === 'split') {
     return (
-      <section className="bg-brand-navy text-white relative overflow-hidden">
+      <section className="text-white relative overflow-hidden" style={{ backgroundColor: '#133D60' }}>
         <DotsBg />
         <div className="container-x py-10 md:py-14 grid md:grid-cols-[auto,1fr,auto] gap-6 items-center relative z-10">
           <ShieldBadge />
@@ -47,8 +40,8 @@ export default function CTABand({
   }
 
   return (
-    <section className="bg-brand-navy text-white relative overflow-hidden">
-      <WaveLines />
+    <section className="text-white relative overflow-hidden" style={{ backgroundColor: '#133D60' }}>
+      {trustNote ? <WaveLines /> : <DotsBg />}
       <div className="container-x py-12 md:py-16 text-center relative z-10">
         <h3 className="text-2xl md:text-3xl font-bold">{title}</h3>
         {subtitle && <p className="text-white/85 mt-3 max-w-2xl mx-auto">{subtitle}</p>}
@@ -70,7 +63,6 @@ export default function CTABand({
 }
 
 function WaveLines() {
-  // Flowing parallel curve lines decoration on the left side of the band
   return (
     <svg
       className="absolute left-0 top-0 h-full w-[280px] md:w-[340px] opacity-50 pointer-events-none"
@@ -113,7 +105,6 @@ function DotsBg() {
           ))
         )}
       </svg>
-      {/* curvy dashed line accent */}
       <svg className="absolute right-10 bottom-6 hidden md:block" width="160" height="40" viewBox="0 0 160 40" aria-hidden="true">
         <path d="M5 30 Q 50 -5, 100 20 T 155 18" stroke="white" strokeWidth="1.5" strokeDasharray="3 4" fill="none" opacity="0.6" />
         <polygon points="150,14 158,18 150,22" fill="white" opacity="0.6" />
